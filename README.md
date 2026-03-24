@@ -12,8 +12,15 @@
 * -> multiplicação
 / -> divisão
 
+## Operadores lógicos
+and -> e -> Se duas condições forem verdadeiras, o resultado é verdadeiro.
+or -> ou -> Se pelo menos uma condição for verdadeira, o resultado é verdadeiro.
+not -> Ele altera o valor booleano da condição.
+
+
 ## Métodos em python
-1. print() -> Exibe informações no terminal
+1. print() -> Exibe informações no terminal.
+2. input() -> Capturar uma informação no terminal.
 
 ## Format em python
 
