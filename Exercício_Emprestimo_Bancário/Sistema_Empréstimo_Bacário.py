@@ -1,4 +1,4 @@
-# Sistema de Empréstimo Bancário
+print("Sistema de Empréstimo Bancário")
 
 # Objetivo: Criar um programa para analizar se um cliente pode receber um empréstimo.
 
@@ -21,4 +21,4 @@ elif int(idade_cliente) < 18:
 elif int(salário_cliente) >= 5000:
     print(f"Empréstimo Aprovado! VIP! Cliente tem salário de {salário_cliente} reais!")
 else:
-    print("Empréstimo negado. CLiente não atende todos os requisitos mínimos")
+    print("Empréstimo negado. Cliente não atende todos os requisitos mínimos")
