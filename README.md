@@ -29,6 +29,29 @@ not -> Ele altera o valor booleano da condição.
 2. ``elif (senão se)`` -> é usado para testar várias condições. Ele só executa se todas as condições anteriores forem falsas.
 3. ``else (senão)`` -> Executa o código se a condição if for false(falsa).
 
+# Laços de repetição
+É um recurso de programação que permite executar em conjunto de comando várias vezes. Também são chmamados de Loop, Laços de repetição ou iteração.
+`FOR` -> Utilizamos quando sabemos quantas vezes queremos repetir algo.
+Sintax:
+for váriavel in range(inicio,fim):
+    comando
+    [range()] -> Método que aceita geração de números.
+    [inicio] -> É inclusivo. É o primeiro número a ser usado.
+    [fim] -> É exclusivo. O número utilizado é o anterior a esse.
+## Escopo das Variáveis
+`Escopo Local` -> A variável só é acessada dentro da estrutura que ela foi criada.
+`Escopo Global` -> A variável pode ser acessada por todo mundo.
+
+## Variações das Variáveis
+Variável em memória -> É declarada quando você não pretende utilizar esssa variável em outros cenários.
+Variável contadora -> É utilizada para uma lógica onde a repetição irá ser alterada.
+
+`WHILE` -> É utilizado quando não sabemos quantas vezes o programa vai repetir. Ele repete enquanto uma condição for verdadeira.
+Sintax:
+while condicao:
+    comandos
+    []
+
 ## Conversçao de tipos em python
 1. int() -> A gente vai incluir qual variável/dado que queremos converter para número inteiro.
 2. float() -> A gente vai incluir qual variável/dado que queremos converter para número decimal.
@@ -38,3 +61,5 @@ not -> Ele altera o valor booleano da condição.
 1. Qualquer variável em python utiliza o padrão de xase snake_case ou recentemente o cammelCase.
 2. Se você observar alguma estrutura tipo nome(), 90% de chance de ser uma função.
 3. Python não tem constante, porém utilizamos opadrão case UPPERCASE, para simular que aquela variável não pode ser alterada.
+
+
