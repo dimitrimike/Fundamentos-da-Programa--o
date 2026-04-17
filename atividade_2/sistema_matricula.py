@@ -15,3 +15,22 @@ elif nota_prova >= 9:
     print("Matricula aprovada automaticamente")
 else:
     print("Matricula negada.")
+
+
+    print("Sistema de controle de entrada para o evento")
+
+# Entrada de dados
+nome = input("Digite o nome da pessoa: ")
+idade = int(input("Digite a idade da pessoa: "))
+convite = input("Digite se a pessoa tem convite, Sim ou Não: ")
+
+
+# Estruturas condicionais
+if idade >= 16 and convite == "Sim":
+    print("Entrada permitida")
+elif idade < 16 or convite == "Não":
+    print("Entrada negada")
+while True:
+    print("Sistema de controle de entrada para o evento")
+    if input("Encerrar"):
+        break
