@@ -15,6 +15,6 @@ def calcular_preco_pizza(tamanho, borda_recheada=False):
         preco += 8.0 # preco = preco + 8.0
     return preco
 
-calcular_preco_pizza("P") # 23
-calcular_preco_pizza("P", True) # 31
-calcular_preco_pizza("M", False) # 23
+calcular_preco_pizza("P") # 25
+calcular_preco_pizza("P", True) # 33
+calcular_preco_pizza("M", False) # 35
