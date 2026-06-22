@@ -8,7 +8,7 @@ saudacao()
 # 1.Pequena, Média ou Grande. Qualquer pizza terá o mesmo valor dependendo do tamanho.
 # 2.Se o cliente optar pela borda recheada, deverá ser acresciodo no valor da pizza + R$8.
 def calcular_preco_pizza(tamanho, borda_recheada=False):
-    "Calcular o preço finel de uma pizza com opções."
+    "Calcular o preço final de uma pizza com opções."
     tabela = {"P": 25.0, "M": 35.0, "G": 45.0}
     preco = tabela[tamanho]
     if borda_recheada: # borda_recheada == True Por padrão toda variável é True
@@ -18,3 +18,5 @@ def calcular_preco_pizza(tamanho, borda_recheada=False):
 calcular_preco_pizza("P") # 25
 calcular_preco_pizza("P", True) # 33
 calcular_preco_pizza("M", False) # 35
+
+lista_mercado = ['Arroz', 'Feijão', 'Açucar']

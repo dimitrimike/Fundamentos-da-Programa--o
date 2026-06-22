@@ -1,3 +1,7 @@
+# Precisamos criar um molde de uma pessoa => class
+# Características => atributos -> varáveis, nome e cpf
+# Ações => métodos -> funções
+
 class Pessoa:
     def __init__(self, nome: str, cpf: str):
         self.nome = nome      # atributo público
