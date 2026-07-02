@@ -13,15 +13,14 @@ class Paciente:
         self.tipo_atendimento = tipo_atendimento
         self.custo_atendimento = custo_atendimento
         return f'''  --- Atendimento Registrado ---
-    {self.exibir_informacoes()}
+
     Tipo de atendimento: {self.tipo_atendimento}
     Custo do atendimento: R$ {self.custo_atendimento:.2f}
-
     '''
 
     def exibir_informacoes(self, detalhado=False):
         if detalhado:
-            return f''' --- Informações do Paciente ---
+            return f'''--- Informações do Paciente (detalhado) ---
 
     Nome: {self.nome}
     Data de Nascimento: {self._data_nascimento}
@@ -29,7 +28,6 @@ class Paciente:
     Telefone: {self._telefone}
     Tipo sanguineo: {self.tipo_sanguineo}
     Prontuario: {self.numero_prontuario}
-
     '''
         else:
             return f''' --- Informações do Paciente ---
@@ -37,7 +35,6 @@ class Paciente:
     Nome: {self.nome}
     Tipo sanguineo: {self.tipo_sanguineo}
     Prontuario: {self.numero_prontuario}
-
     '''
 
 

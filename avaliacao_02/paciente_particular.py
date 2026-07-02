@@ -9,33 +9,46 @@ class PacienteParticular(Paciente):
         self.forma_pagamento = forma_pagamento
         self.desconto_fidelidade = desconto_fidelidade
 
-    def exibir_informacoes(self):
-        informacoes_paciente = super().exibir_informacoes(detalhado=True)
-        return f''' {informacoes_paciente}
+
+    def calcular_valor_final(self):
+        registro_atendimento = super().registrar_atendimento(self.tipo_atendimento, self.custo_atendimento)
+        valor_consulta = 100.00
+        taxa_urgencia = 50.00
+        if self.desconto_fidelidade.lower() == 'sim':
+            desconto = 0.5
+        elif self.desconto_fidelidade.lower() == 'não':
+            desconto = 0
+        else:
+            raise ValueError("Erro! Para informar se o paciente tem desconto fidelidade digite: 'sim' ou 'não'.")
+        valor_consulta_desconto = valor_consulta - (valor_consulta * desconto)
+        valor_final = self.custo_atendimento + valor_consulta_desconto
+        valor_final_urgencia = valor_final + taxa_urgencia
+        if 'urgente' in self.tipo_atendimento.lower():
+            return f'''--- Conta do Paciente {self.nome} ---
+
+    Tipo de atendimento: {self.tipo_atendimento}
+    Custo do atendimento: {self.custo_atendimento}
+    Desconto Fidelidade: {self.desconto_fidelidade}
+    Consulta: R$ {valor_consulta_desconto:.2f}
+    Taxa de Urgência: R$ {taxa_urgencia:.2f}
+    Total: R$ {valor_final_urgencia:.2f}
+
+    '''
+        else:
+            return f'''--- Conta do Paciente {self.nome} ---
+
+    Tipo de atendimento: {self.tipo_atendimento}
+    Custo do atendimento: {self.custo_atendimento}
+    Desconto Fidelidade: {self.desconto_fidelidade}
+    Consulta: R$ {valor_consulta_desconto:.2f}
+    Total: R$ {valor_final:.2f}
+
+    '''
+
+    def exibir_informacoes_particular(self):
+        informacoes_paciente_det = super().exibir_informacoes(detalhado=True)
+        return f''' {informacoes_paciente_det}
     Forma de pagamento: {self.forma_pagamento}
     Possui desconto de fidelidade: {self.desconto_fidelidade}
 
-        '''
-
-    def calcular_valor_final(self, taxa_urgencia: float = 50.0):
-        self.taxa_urgencia = taxa_urgencia
-        if 'urgente' in self.tipo_atendimento.lower():
-            self.taxa_urgencia = taxa_urgencia
-        else:
-            self.taxa_urgencia = 0.0
-        if self.desconto_fidelidade.lower() == 'sim':
-            self.desconto_fidelidade = 0.1
-        else:
-            self.desconto_fidelidade = 0.0
-        valor_final = self.custo_atendimento - (self.desconto_fidelidade * self.custo_atendimento) + self.taxa_urgencia
-        return f''' --- Conta do paciente {self.nome} ---
-
-    Custo do atendimento: R$ {self.custo_atendimento:.2f}
-    Desconto de fidelidade: R$ {self.desconto_fidelidade * self.custo_atendimento:.2f}
-    Taxa de urgência: R$ {self.taxa_urgencia:.2f}
-
-    Total a pagar: R$ {valor_final:.2f}
-
-        '''
-
-
+    '''
